@@ -6,7 +6,7 @@ import os
 from flask.ext.sqlalchemy import SQLAlchemy
 
 
-SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
+SQLALCHEMY_DATABASE_URI = 'sqlite:////tmp/test.db'
 
 db = SQLAlchemy()
 
