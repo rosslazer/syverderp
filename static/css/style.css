@@ -444,6 +444,7 @@ body {
   margin: 0 auto;
   max-width: 1300px;
   padding: 10px;
+  perspective: 1000;
 }
 
 h1 {
@@ -470,6 +471,9 @@ h1 span {
   border-radius: 8px;
   background-size: cover;
   background-position: center top;
+  -webkit-filter: brightness(1.0);
+     -moz-filter: brightness(1.0);
+          filter: brightness(1.0);
 }
 .team:hover {
   -webkit-filter: brightness(1.2);
@@ -504,6 +508,29 @@ h1 span {
   margin: -83px auto 10px;
   background-size: cover;
   background-position: center top;
+  -webkit-transition: .5s;
+     -moz-transition: .5s;
+          transition: .5s;
+  -webkit-transform-style: preserve-3d;
+}
+.icon.flip {
+  -webkit-transform: rotateY(180deg);
+}
+.icon .back {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 158px;
+  height: 158px;
+  background: #FFF;
+  background: rgba(255, 255, 255, .8);
+  border-radius: 80px;
+  -webkit-transform: rotateY(180deg);
+  text-align: center;
+  color: #000;
+  font-size: 50px;
+  padding-top: 45px;
 }
 .icon.syverdude {
   background-image: url(/static/img/syverdude.jpg);
