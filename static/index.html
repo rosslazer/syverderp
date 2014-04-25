@@ -88,8 +88,7 @@ $.post('supersecurevote', { vote: "True"},
 });
 
   } else if (response.status === 'not_authorized') {
-    // the user is logged in to Facebook, 
-    // but has not authenticated your app
+    logerin();
   } else {
     // the user isn't logged in to Facebook.
   }
@@ -120,8 +119,7 @@ $.post('supersecurevote', { vote: "False"},
 });
 
   } else if (response.status === 'not_authorized') {
-    // the user is logged in to Facebook, 
-    // but has not authenticated your app
+    logerin();
   } else {
     // the user isn't logged in to Facebook.
   }
@@ -132,6 +130,20 @@ $.cookie("voted", "true");
 }
 
 
+function logerin() {
+
+
+   FB.login(function(response) {
+   if (response.authResponse) {
+     console.log('Welcome!  Fetching your information.... ');
+     FB.api('/me', function(response) {
+       console.log('Good to see you, ' + response.name + '.');
+     });
+   } else {
+     console.log('User cancelled login or did not fully authorize.');
+   }
+ });
+}
 
   
 
