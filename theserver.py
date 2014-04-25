@@ -13,6 +13,7 @@ app = init_db(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 app.config.from_object('model')
 app = init_db(app)
+db.app = app
  
 @app.before_first_request
 def init():
@@ -54,7 +55,7 @@ def stats():
 
 if __name__ == "__main__":
 	app.debug = True
-	app.run()
+	app.run(host='0.0.0.0')
 
 
 
