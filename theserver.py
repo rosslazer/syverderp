@@ -8,7 +8,6 @@ from model import db, init_db, Vote
 import os
 
 app = Flask(__name__)
-app = init_db(app)
 
 #app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 app.config.from_object('model')
