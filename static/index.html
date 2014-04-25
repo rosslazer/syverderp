@@ -90,6 +90,7 @@ function voteDeer()
 $.post('supersecurevote', { vote: "Deer"}, 
     function(returnedData){
          console.log(returnedData);
+         voteStats();
 });
 
 $.cookie("voted", "true");
@@ -123,6 +124,7 @@ function voteBear()
 $.post('supersecurevote', { vote: "Bear"}, 
     function(returnedData){
          console.log(returnedData);
+         voteStats();
 });
 
 $.cookie("voted", "true");
@@ -136,6 +138,16 @@ $.cookie("voted", "true");
  });
 
 
+}
+
+function voteStats() {
+  var data = $.getJSON('votestats'),
+      total = data.bears + data.deers,
+      bears = Math.round(data.bears / total * 100),
+      deers = Math.round(data.deers / total * 100);
+
+  $('.bear .icon').addClass('flip').find('span').html(bears);
+  $('.deer .icon').addClass('flip').find('span').html(deers);
 }
 
 
