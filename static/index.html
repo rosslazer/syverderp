@@ -12,7 +12,7 @@
 
 
 <body>
-	<div id="fb-root"></div>
+  <div id="fb-root"></div>
     <script>
       window.fbAsyncInit = function() {
         FB.init({
@@ -69,9 +69,9 @@ $(function() {
 
 function voteDeer()
 {
-	var cVal = $.cookie("voted")
+  var cVal = $.cookie("voted")
 
-	FB.getLoginStatus(function(response) {
+  FB.getLoginStatus(function(response) {
   if (response.status === 'connected' && cVal != "true") {
     // the user is logged in and has authenticated your
     // app, and response.authResponse supplies
@@ -100,10 +100,10 @@ $.cookie("voted", "true");
 }
 
 function voteBear()
-{	
-	var cVal = $.cookie("voted")
+{ 
+  var cVal = $.cookie("voted")
 
-	FB.getLoginStatus(function(response) {
+  FB.getLoginStatus(function(response) {
   if (response.status === 'connected'  && cVal != "true") {
     // the user is logged in and has authenticated your
     // app, and response.authResponse supplies
@@ -133,7 +133,7 @@ $.cookie("voted", "true");
 
 
 
-	
+  
 
 
 </script>

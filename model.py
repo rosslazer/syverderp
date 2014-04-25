@@ -1,11 +1,12 @@
 from flask import Flask, jsonify
 
+import os
 
 
 from flask.ext.sqlalchemy import SQLAlchemy
 
 
-SQLALCHEMY_DATABASE_URI = 'sqlite:////tmp/test.db'
+SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
 
 db = SQLAlchemy()
 
