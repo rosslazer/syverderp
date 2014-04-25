@@ -440,6 +440,12 @@ body {
   color: #FFF;
 }
 
+.container {
+  margin: 0 auto;
+  max-width: 1300px;
+  padding: 10px;
+}
+
 h1 {
   font-weight: 100;
   text-transform: uppercase;
@@ -523,4 +529,51 @@ h1 span {
   text-align: center;
   float: left;
   font-size: 20px;
+}
+
+@media (max-width: 950px) {
+  h1 {
+    font-size: 50px;
+    margin-bottom: 40px;
+  }
+  h1 span {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 750px) {
+  h2 span {
+    display: block;
+  }
+}
+
+@media (max-width: 565px) {
+  h1 {
+    font-size: 40px;
+  }
+  h1 span {
+    font-size: 35px;
+  }
+  .team {
+    float: none;
+    width: auto;
+    margin: 90px 0 0;
+  }
+  .or {
+    float: none;
+    width: auto;
+    margin: 8px 0 0;
+  }
+  h2 span {
+    display: inline;
+  }
+}
+
+@media (max-width: 365px) {
+  h2 {
+    font-size: 30px;
+  }
+  h2 span {
+    display: block;
+  }
 }
