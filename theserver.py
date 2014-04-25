@@ -5,6 +5,7 @@ from flask.ext.sqlalchemy import SQLAlchemy
 
 from model import db, init_db, Vote
 
+import os
 
 app = Flask(__name__)
 app = init_db(app)
