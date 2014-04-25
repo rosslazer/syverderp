@@ -10,7 +10,7 @@ import os
 app = Flask(__name__)
 app = init_db(app)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'#os.environ['DATABASE_URL']
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 app.config.from_object('model')
 app = init_db(app)
 db.app = app
