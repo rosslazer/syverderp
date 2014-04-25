@@ -85,6 +85,14 @@ function voteDeer()
 {
   var cVal = $.cookie("voted")
 
+
+
+    if(cVal == "true"){
+
+
+      window.alert("Sorry, it looks like you already voted!");
+
+    }
   FB.getLoginStatus(function(response) {
   if (response.status === 'connected' && cVal != "true") {
     // the user is logged in and has authenticated your
@@ -120,6 +128,13 @@ function voteBear()
   var cVal = $.cookie("voted")
 
   FB.getLoginStatus(function(response) {
+
+    if(cVal == "true"){
+
+
+      window.alert("Sorry, it looks like you already voted!");
+
+    }
   if (response.status === 'connected'  && cVal != "true") {
     // the user is logged in and has authenticated your
     // app, and response.authResponse supplies
