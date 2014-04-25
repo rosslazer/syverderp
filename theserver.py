@@ -29,12 +29,13 @@ def index():
 def vote():
 	if request.method == 'POST':
 		responseVote = request.form['vote']
-		if responseVote == True:
+		if responseVote == "Deer":
 			newVote = Vote(True)
-		else:
+		else if responseVote == "Bear":
 			newVote = Vote(False)
 		db.session.add(newVote)
 		db.session.commit()
+
 
 		return jsonify(response="OK")
 	else:

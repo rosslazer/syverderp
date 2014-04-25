@@ -87,7 +87,7 @@ function voteDeer()
     var accessToken = response.authResponse.accessToken;
 
 
-$.post('supersecurevote', { vote: "True"}, 
+$.post('supersecurevote', { vote: "Deer"}, 
     function(returnedData){
          console.log(returnedData);
 });
@@ -120,7 +120,7 @@ function voteBear()
     var accessToken = response.authResponse.accessToken;
 
 
-$.post('supersecurevote', { vote: "False"}, 
+$.post('supersecurevote', { vote: "Bear"}, 
     function(returnedData){
          console.log(returnedData);
 });
