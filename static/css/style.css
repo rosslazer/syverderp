@@ -563,6 +563,13 @@ h1 span {
   text-align: center;
 }
 
+.show-results {
+  color: #FFF;
+  position: relative;
+  top: -6px;
+  display: inline-block;
+}
+
 @media (max-width: 950px) {
   h1 {
     font-size: 50px;
