@@ -11,8 +11,9 @@ db = SQLAlchemy(app)
 
 
 @app.route("/")
-def hello():
-    return "Hello World!"
+def index():
+#Render static html
+
 
 if __name__ == "__main__":
     app.run()
@@ -29,8 +30,10 @@ class Vote(db.Model):
 
 
     def __init__(self, fbid, theirvote):
-        self.facebookID = fbid
         self.vote = theirvote
 
     # def __repr__(self):
     #     return '<User %r>' % self.username
+
+
+
