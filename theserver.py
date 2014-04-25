@@ -29,7 +29,7 @@ class Vote(db.Model):
 
 
     def __init__(self, fbid, theirvote):
-        self.facebookID = username
+        self.facebookID = fbid
         self.vote = theirvote
 
     # def __repr__(self):
