@@ -1,0 +1,141 @@
+<html>
+
+<head>
+    <title>Kent's Challenge</title>
+    <link href="/static/css/style.css" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="/static/js/script.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="//use.typekit.net/gwh8oxu.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+
+
+<body>
+	<div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1407733009502389',
+          status     : true,
+          xfbml      : true
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/all.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+<fb:login-button autologoutlink='true'  perms='email,user_birthday,status_update,publish_stream'></fb:login-button>
+
+
+    <h1>Chancellor Kent Syverud <span>would like to know&hellip;</span></h1>
+
+    <div class="team bear">
+
+      <div class="icon"></div>
+
+      <h2><span>Vote</span> Bear</h2>
+      <h3>(sarahcuse)</h3>
+
+    </div>
+
+    <div class="or">or</div>
+
+    <div class="team deer">
+
+      <div class="icon"></div>
+
+      <h2><span>Vote</span> Deer</h2>
+      <h3>(seeracuse)</h3>
+
+    </div>
+
+
+</body>
+
+<script type="text/javascript">
+
+
+$(function() {
+  $('.bear').on('click', voteBear);
+  $('.deer').on('click', voteDeer);
+});
+
+function voteDeer()
+{
+	var cVal = $.cookie("voted")
+
+	FB.getLoginStatus(function(response) {
+  if (response.status === 'connected' && cVal != "true") {
+    // the user is logged in and has authenticated your
+    // app, and response.authResponse supplies
+    // the user's ID, a valid access token, a signed
+    // request, and the time the access token 
+    // and signed request each expire
+    var uid = response.authResponse.userID;
+    var accessToken = response.authResponse.accessToken;
+
+
+$.post('supersecurevote', { vote: "True"}, 
+    function(returnedData){
+         console.log(returnedData);
+});
+
+  } else if (response.status === 'not_authorized') {
+    // the user is logged in to Facebook, 
+    // but has not authenticated your app
+  } else {
+    // the user isn't logged in to Facebook.
+  }
+ });
+
+$.cookie("voted", "true");
+
+}
+
+function voteBear()
+{	
+	var cVal = $.cookie("voted")
+
+	FB.getLoginStatus(function(response) {
+  if (response.status === 'connected'  && cVal != "true") {
+    // the user is logged in and has authenticated your
+    // app, and response.authResponse supplies
+    // the user's ID, a valid access token, a signed
+    // request, and the time the access token 
+    // and signed request each expire
+    var uid = response.authResponse.userID;
+    var accessToken = response.authResponse.accessToken;
+
+
+$.post('supersecurevote', { vote: "True"}, 
+    function(returnedData){
+         console.log(returnedData);
+});
+
+  } else if (response.status === 'not_authorized') {
+    // the user is logged in to Facebook, 
+    // but has not authenticated your app
+  } else {
+    // the user isn't logged in to Facebook.
+  }
+ });
+
+$.cookie("voted", "true");
+
+}
+
+
+
+	
+
+
+</script>
+
+</html>
