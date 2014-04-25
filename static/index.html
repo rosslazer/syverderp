@@ -63,29 +63,25 @@
   
   </div>
 
-  <div class="social">
+        <div class="fb-share-button" style="text-align: center;" data-href="http://www.kentschallenge.com/" data-type="button_count"></div>
 
-    <div class="fb-share-button" data-href="http://www.kentschallenge.com/" data-type="button_count"></div>
 
-    <a href="https://twitter.com/share" class="twitter-share-button" data-url="kentschallenge.com" data-hashtags="DeerOrBear">Tweet</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-  </div>
-
+<a href="https://twitter.com/share"style="text-align: center;"  class="twitter-share-button" data-hashtags="DeerOrBear">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
 
 </body>
 
 <script type="text/javascript">
 
+  var cVal = $.cookie("voted")
+
+
 
 $(function() {
   $('.bear').on('click', voteBear);
   $('.deer').on('click', voteDeer);
-
-  if ($.cookie("voted") == "true") {
-    voteStats();
-  }
 });
 
 function voteDeer()
@@ -172,15 +168,13 @@ $.cookie("voted", "true");
 }
 
 function voteStats() {
-  $.getJSON('votestats', function(data) {
+  var data = $.getJSON('votestats'),
+      total = data.bears + data.deers,
+      bears = Math.round(data.bears / total * 100),
+      deers = Math.round(data.deers / total * 100);
 
-    var total = data.bears + data.deers,
-        bears = Math.round(data.bears / total * 100),
-        deers = Math.round(data.deers / total * 100);
-
-    $('.bear .icon').addClass('flip').find('span').html(bears);
-    $('.deer .icon').addClass('flip').find('span').html(deers);
-  });
+  $('.bear .icon').addClass('flip').find('span').html(bears);
+  $('.deer .icon').addClass('flip').find('span').html(deers);
 }
 
 
