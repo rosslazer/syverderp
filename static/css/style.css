@@ -558,6 +558,11 @@ h1 span {
   font-size: 20px;
 }
 
+.social {
+  clear: both;
+  text-align: center;
+}
+
 @media (max-width: 950px) {
   h1 {
     font-size: 50px;
