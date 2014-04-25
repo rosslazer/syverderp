@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 
 
 from flask.ext.sqlalchemy import SQLAlchemy
@@ -21,7 +21,7 @@ def init():
 @app.route("/")
 def index():
 #Render static html
-	print "dsfdsf"
+	return render_template('index.html')
 
 @app.route("/supersecurevote", methods=['POST'])
 def vote():
