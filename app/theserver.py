@@ -21,7 +21,7 @@ def init():
 @app.route("/")
 def index():
 #Render static html
-	print "dsfdsf"
+	return app.send_static_file('index.html')
 
 @app.route("/supersecurevote", methods=['POST'])
 def vote():
