@@ -82,6 +82,10 @@
 $(function() {
   $('.bear').on('click', voteBear);
   $('.deer').on('click', voteDeer);
+
+  if ($.cookie("voted") == "true") {
+    voteStats();
+  }
 });
 
 function voteDeer()
