@@ -31,7 +31,7 @@ def vote():
 		responseVote = request.form['vote']
 		if responseVote == "Deer":
 			newVote = Vote(True)
-		else if responseVote == "Bear":
+		elif responseVote == "Bear":
 			newVote = Vote(False)
 		db.session.add(newVote)
 		db.session.commit()
