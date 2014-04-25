@@ -114,7 +114,7 @@ function voteBear()
     var accessToken = response.authResponse.accessToken;
 
 
-$.post('supersecurevote', { vote: "True"}, 
+$.post('supersecurevote', { vote: "False"}, 
     function(returnedData){
          console.log(returnedData);
 });
