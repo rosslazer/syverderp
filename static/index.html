@@ -183,13 +183,15 @@ $.cookie("voted", "true");
 }
 
 function voteStats() {
-  var data = $.getJSON('votestats'),
-      total = data.bears + data.deers,
-      bears = Math.round(data.bears / total * 100),
-      deers = Math.round(data.deers / total * 100);
+  $.getJSON('votestats', function (data) {
 
-  $('.bear .icon').addClass('flip').find('span').html(bears);
-  $('.deer .icon').addClass('flip').find('span').html(deers);
+    var total = data.bears + data.deers,
+        bears = Math.round(data.bears / total * 100),
+        deers = Math.round(data.deers / total * 100);
+
+    $('.bear .icon').addClass('flip').find('span').html(bears);
+    $('.deer .icon').addClass('flip').find('span').html(deers);
+  });
 }
 
 
