@@ -9,3 +9,4 @@ Flask-Security==1.7.1
 Flask-Social==1.6.2
 Flask-WTF==0.9.4
 gunicorn==0.17.2
+psycopg2==2.5.2
