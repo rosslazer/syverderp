@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 
 
 from flask.ext.sqlalchemy import SQLAlchemy
@@ -13,6 +13,25 @@ db = SQLAlchemy(app)
 @app.route("/")
 def index():
 #Render static html
+
+@app.route("/supersecurevote", methods=['POST'])
+def vote():
+	if request.method == 'POST':
+		responseVote = request.form['vote']
+		newVote = Vote(responseVote)
+		db.session.add(newVote)
+		 db.session.commit()
+		return jsonify(response="OK")
+	else:
+		return jsonify(response="FAILED")		
+
+
+
+
+@app.route("/supersecurevote", methods=['GET'])
+def stats():
+	
+
 
 
 if __name__ == "__main__":
@@ -29,7 +48,7 @@ class Vote(db.Model):
 
 
 
-    def __init__(self, fbid, theirvote):
+    def __init__(self, theirvote):
         self.vote = theirvote
 
     # def __repr__(self):
