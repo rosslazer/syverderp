@@ -440,6 +440,12 @@ body {
   color: #FFF;
 }
 
+.container {
+  margin: 0 auto;
+  max-width: 1300px;
+  padding: 10px;
+}
+
 h1 {
   font-weight: 100;
   text-transform: uppercase;
@@ -487,17 +493,21 @@ h1 span {
 .team h3 {
   font-weight: 100;
   letter-spacing: 1px;
-  margin: 0 0 60px;
+  margin: 0 0 65px;
 }
-.team .icon {
+.icon {
   width: 160px;
   height: 160px;
   border-radius: 80px;
   border: 3px solid #FFF;
   box-shadow: 0 3px 0 rgba(0, 0, 0, .3);
-  margin: -83px auto 0;
+  margin: -83px auto 10px;
   background-size: cover;
   background-position: center top;
+}
+.icon.syverdude {
+  background-image: url(/static/img/syverdude.jpg);
+  margin-top: 50px;
 }
 
 .team.bear {
@@ -519,4 +529,51 @@ h1 span {
   text-align: center;
   float: left;
   font-size: 20px;
+}
+
+@media (max-width: 950px) {
+  h1 {
+    font-size: 50px;
+    margin-bottom: 40px;
+  }
+  h1 span {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 750px) {
+  h2 span {
+    display: block;
+  }
+}
+
+@media (max-width: 565px) {
+  h1 {
+    font-size: 40px;
+  }
+  h1 span {
+    font-size: 35px;
+  }
+  .team {
+    float: none;
+    width: auto;
+    margin: 90px 0 0;
+  }
+  .or {
+    float: none;
+    width: auto;
+    margin: 8px 0 0;
+  }
+  h2 span {
+    display: inline;
+  }
+}
+
+@media (max-width: 365px) {
+  h2 {
+    font-size: 30px;
+  }
+  h2 span {
+    display: block;
+  }
 }
