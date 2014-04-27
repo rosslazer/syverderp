@@ -19,7 +19,7 @@
 <body>
   <div id="fb-root"></div>
 
-  
+
     <script>
       window.fbAsyncInit = function() {
         FB.init({
@@ -38,7 +38,6 @@
        }(document, 'script', 'facebook-jssdk'));
     </script>
 
-<fb:login-button autologoutlink='true'  perms='email,user_birthday,status_update,publish_stream'></fb:login-button>
 
   <div class="container">
     <div class="icon syverdude"></div>
@@ -113,8 +112,7 @@ function voteDeer()
       window.alert("Sorry, it looks like you already voted!");
 
     }
-  FB.getLoginStatus(function(response) {
-  if (response.status === 'connected' && cVal != "true") {
+  if ( cVal != "true") {
     // the user is logged in and has authenticated your
     // app, and response.authResponse supplies
     // the user's ID, a valid access token, a signed
@@ -133,21 +131,14 @@ $.post('supersecurevote', { vote: "Deer"},
 $.cookie("voted", "true");
 
 
-  } else if (response.status === 'not_authorized') {
 
-  } else {
-    FB.login();
-  }
- });
-
-
+}
 }
 
 function voteBear()
 { 
   var cVal = $.cookie("voted")
 
-  FB.getLoginStatus(function(response) {
 
     if(cVal == "true"){
 
@@ -174,13 +165,7 @@ $.post('supersecurevote', { vote: "Bear"},
 $.cookie("voted", "true");
 
 
-  } else if (response.status === 'not_authorized') {
-
-  } else {
-    FB.login();
-  }
- });
-
+  } 
 
 }
 
