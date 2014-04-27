@@ -118,8 +118,6 @@ function voteDeer()
     // the user's ID, a valid access token, a signed
     // request, and the time the access token 
     // and signed request each expire
-    var uid = response.authResponse.userID;
-    var accessToken = response.authResponse.accessToken;
 
 
 $.post('supersecurevote', { vote: "Deer"}, 
@@ -146,14 +144,13 @@ function voteBear()
       window.alert("Sorry, it looks like you already voted!");
 
     }
-  if (response.status === 'connected'  && cVal != "true") {
+  if (cVal != "true") {
     // the user is logged in and has authenticated your
     // app, and response.authResponse supplies
     // the user's ID, a valid access token, a signed
     // request, and the time the access token 
     // and signed request each expire
-    var uid = response.authResponse.userID;
-    var accessToken = response.authResponse.accessToken;
+
 
 
 $.post('supersecurevote', { vote: "Bear"}, 
